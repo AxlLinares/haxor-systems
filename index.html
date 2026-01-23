@@ -99,6 +99,37 @@
             color: var(--haxor-turquoise);
         }
         
+        /* Language Switcher */
+        .language-switcher {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        
+        .lang-btn {
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(192, 192, 192, 0.2);
+            border-radius: 20px;
+            color: var(--haxor-silver);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        .lang-btn:hover {
+            border-color: var(--haxor-turquoise);
+            color: var(--haxor-turquoise);
+        }
+        
+        .lang-btn.active {
+            background: var(--haxor-turquoise);
+            color: var(--haxor-dark);
+            border-color: var(--haxor-turquoise);
+        }
+        
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -496,6 +527,15 @@
                 display: none;
             }
             
+            .language-switcher {
+                margin-left: auto;
+            }
+            
+            .lang-btn {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.75rem;
+            }
+            
             .tools-grid {
                 grid-template-columns: 1fr;
             }
@@ -576,6 +616,11 @@
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <div class="language-switcher">
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="es">ES</button>
+                <button class="lang-btn" data-lang="de">DE</button>
+            </div>
         </nav>
     </header>
 
@@ -890,6 +935,34 @@
 
     <!-- JavaScript -->
     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Language Management
+        let currentLanguage = localStorage.getItem('haxor-language') || 'en';
+        
+        // Set initial active language button on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            updateLanguageButtons();
+            setupLanguageSwitcher();
+        });
+        
+        function updateLanguageButtons() {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.dataset.lang === currentLanguage) {
+                    btn.classList.add('active');
+                }
+            });
+        }
+        
+        function setupLanguageSwitcher() {
+            document.querySelectorAll('.lang-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    currentLanguage = this.dataset.lang;
+                    localStorage.setItem('haxor-language', currentLanguage);
+                    updateLanguageButtons();
+                });
+            });
+        }
+        
         // Configuration
         const HAXOR_CONFIG = {
             webhooks: {
@@ -933,13 +1006,16 @@
             document.body.style.overflow = 'auto';
         }
 
-        // Detect Region
+        // Detect Region based on selected language
         function detectRegion() {
-            const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-            if (timezone.includes('America')) return 'LATAM';
-            if (timezone.includes('Europe') && (timezone.includes('Berlin') || timezone.includes('Vienna') || timezone.includes('Zurich'))) return 'DACH';
-            if (timezone.includes('Europe')) return 'EMEA';
-            return 'USA';
+            // Map language to region
+            const langToRegion = {
+                'en': 'USA',
+                'es': 'LATAM',
+                'de': 'DACH'
+            };
+            
+            return langToRegion[currentLanguage] || 'USA';
         }
 
         // Form Submissions
