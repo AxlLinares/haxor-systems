@@ -452,6 +452,143 @@
             margin: 0 auto;
         }
         
+        /* About Section */
+        .about-section {
+            padding: 8rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .about-intro {
+            max-width: 900px;
+            margin: 0 auto 6rem;
+            text-align: center;
+        }
+        
+        .about-intro h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 800;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #fff, var(--haxor-turquoise));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .about-intro .lead {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--haxor-silver);
+            margin-bottom: 1.5rem;
+        }
+        
+        .about-intro .signature {
+            font-family: 'JetBrains Mono', monospace;
+            color: var(--haxor-turquoise);
+            font-size: 0.95rem;
+            margin-top: 2rem;
+        }
+        
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2.5rem;
+            margin: 6rem 0;
+        }
+        
+        .pillar-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 212, 170, 0.2);
+            border-radius: 20px;
+            padding: 2.5rem;
+            transition: all 0.4s;
+        }
+        
+        .pillar-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--haxor-turquoise);
+            box-shadow: 0 20px 60px rgba(0, 212, 170, 0.2);
+        }
+        
+        .pillar-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .pillar-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--haxor-turquoise);
+            margin-bottom: 1rem;
+        }
+        
+        .pillar-desc {
+            color: var(--haxor-silver);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+        
+        .why-haxor {
+            max-width: 1000px;
+            margin: 6rem auto;
+            padding: 3rem;
+            background: rgba(0, 212, 170, 0.03);
+            border-radius: 24px;
+            border: 1px solid rgba(0, 212, 170, 0.2);
+        }
+        
+        .why-haxor h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--haxor-turquoise);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .differentiator {
+            margin-bottom: 2rem;
+        }
+        
+        .differentiator h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--haxor-green-light);
+            margin-bottom: 0.5rem;
+        }
+        
+        .differentiator p {
+            color: var(--haxor-silver);
+            line-height: 1.8;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        
+        .value-item {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .value-title {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--haxor-turquoise);
+            margin-bottom: 0.5rem;
+        }
+        
+        .value-desc {
+            color: var(--haxor-silver);
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
         .partners-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -692,6 +829,87 @@
             <div class="stat-item">
                 <div class="stat-number" data-target="25">0</div>
                 <div class="stat-label">Processes Automated</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="about-intro">
+            <h2>Philosophy & Precision</h2>
+            <p class="lead">HAXOR was born in 2019 at the intersection of power and precision—initially in gaming hardware. That obsession with optimizing every physical component evolved naturally into strategic consulting.</p>
+            <p class="lead">"Technology advances at a pace that companies can't always keep up with. My vision is to be the ally that brings certainty. From the most basic support to the most complex automation, we solve problems with a mix of rigorous logic, disruptive creativity, and an insatiable curiosity for how things work."</p>
+            <p class="signature">— Axel Linares, CEO & Principal Architect</p>
+            <p style="color: var(--haxor-silver); margin-top: 2rem; font-size: 1.1rem;">We don't sell tools. We deliver results, peace of mind, and professional honesty.</p>
+        </div>
+
+        <div class="section-header">
+            <h2 class="section-title">Our Expertise</h2>
+        </div>
+
+        <div class="pillars-grid">
+            <!-- AI Automation -->
+            <div class="pillar-card">
+                <div class="pillar-icon">🤖</div>
+                <h3 class="pillar-title">AI Automation</h3>
+                <p class="pillar-desc">Everyone wants to "jump on AI," but few know how to land it. At HAXOR, we don't create complex solutions just because they're trendy—we understand the root problem to attack it in a simple, concise way. Less operational burden, more strategic projection.</p>
+            </div>
+
+            <!-- Cybersecurity -->
+            <div class="pillar-card">
+                <div class="pillar-icon">🛡️</div>
+                <h3 class="pillar-title">Cybersecurity</h3>
+                <p class="pillar-desc">In a data-driven world, losing information is losing everything. We shield assets, data, and above all, our clients' reputation. Security isn't an accessory—it's the pillar of permanence.</p>
+            </div>
+
+            <!-- Custom Development -->
+            <div class="pillar-card">
+                <div class="pillar-icon">⚙️</div>
+                <h3 class="pillar-title">Custom Development</h3>
+                <p class="pillar-desc">We don't build isolated websites; we design digital ecosystems that grow with the business. Precision software that aligns with the client's long-term vision.</p>
+            </div>
+
+            <!-- IT Solutions -->
+            <div class="pillar-card">
+                <div class="pillar-icon">🔧</div>
+                <h3 class="pillar-title">IT Solutions</h3>
+                <p class="pillar-desc">Our passion for hardware lives on. From building high-performance equipment to structured cabling engineering, servers, MDF/IDF, and fiber optics. We design the physical skeleton that supports business intelligence.</p>
+            </div>
+        </div>
+
+        <!-- Why HAXOR -->
+        <div class="why-haxor">
+            <h3>Why HAXOR</h3>
+            
+            <div class="differentiator">
+                <h4>Deep Analysis</h4>
+                <p>While others sell a tool, we deliver a result. We take the time to analyze needs and scope before proposing a single line of code.</p>
+            </div>
+
+            <div class="differentiator">
+                <h4>Direct Presence</h4>
+                <p>Every project has the clinical eye of the Principal Architect (CEO) and impeccable management from Project Managers focused on the idea funnel and millimetric organization.</p>
+            </div>
+
+            <div class="differentiator">
+                <h4>Logistical Muscle</h4>
+                <p>Direct alliances with Mexico's most important hardware wholesalers and partners specialized in physical infrastructure.</p>
+            </div>
+        </div>
+
+        <!-- Core Values -->
+        <div class="values-grid">
+            <div class="value-item">
+                <div class="value-title">Practical Innovation</div>
+                <p class="value-desc">We innovate to solve, not to decorate</p>
+            </div>
+            <div class="value-item">
+                <div class="value-title">Precision Engineering</div>
+                <p class="value-desc">Hardware heritage applied to digital processes</p>
+            </div>
+            <div class="value-item">
+                <div class="value-title">Deep Understanding</div>
+                <p class="value-desc">Real analysis to propose solutions that impact ROI</p>
             </div>
         </div>
     </section>
@@ -938,10 +1156,409 @@
         // Language Management
         let currentLanguage = localStorage.getItem('haxor-language') || 'en';
         
+        // Translations
+        const translations = {
+            en: {
+                // Hero
+                heroTitle: 'Enterprise Technology<br>Consulting',
+                heroSubtitle: 'AI Automation • Cybersecurity • Custom Development • IT Solutions',
+                heroCTA1: 'Explore Tools',
+                heroCTA2: 'Get in Touch',
+                
+                // Nav
+                navTools: 'Tools',
+                navAbout: 'About',
+                navContact: 'Contact',
+                
+                // Tools Section
+                toolsTitle: 'Diagnostic Tools',
+                toolsSubtitle: 'Precision engineering for your technology infrastructure',
+                
+                // Express Auditor
+                tool1Title: 'Express Auditor',
+                tool1Desc: 'Strategic diagnosis of your technical infrastructure. Precision analysis of architecture gaps and optimization opportunities.',
+                tool1Badge: '45-MIN SESSION',
+                
+                // Cyber Shield
+                tool2Title: 'Cyber-Shield Scanner',
+                tool2Desc: 'Comprehensive security analysis with tailored protection architecture. Identify vulnerabilities before they become breaches.',
+                tool2Badge: 'SECURITY AUDIT',
+                
+                // ROI Calculator
+                tool3Title: 'ROI Calculator',
+                tool3Desc: 'Quantify automation ROI with precision metrics. Calculate exact time and cost savings from process optimization and AI implementation.',
+                tool3Badge: 'IMPACT DOSSIER',
+                
+                // Use Cases
+                tool4Title: 'Use Cases Finder',
+                tool4Desc: 'Discover AI and automation opportunities tailored to your industry. Strategic implementation roadmap included.',
+                tool4Badge: 'AI OPPORTUNITIES',
+                
+                // Stats
+                statsSaved: 'Saved for Clients',
+                statsThreats: 'Threats Blocked',
+                statsProcesses: 'Processes Automated',
+                
+                // Partners
+                partnersTitle: 'Trusted Partners',
+                
+                // Footer
+                footerText: 'Enterprise Technology Consulting.',
+                
+                // About Section
+                aboutTitle: 'Philosophy & Precision',
+                aboutLead1: 'HAXOR was born in 2019 at the intersection of power and precision—initially in gaming hardware. That obsession with optimizing every physical component evolved naturally into strategic consulting.',
+                aboutLead2: '"Technology advances at a pace that companies can\'t always keep up with. My vision is to be the ally that brings certainty. From the most basic support to the most complex automation, we solve problems with a mix of rigorous logic, disruptive creativity, and an insatiable curiosity for how things work."',
+                aboutSignature: '— Axel Linares, CEO & Principal Architect',
+                aboutPromise: 'We don\'t sell tools. We deliver results, peace of mind, and professional honesty.',
+                
+                expertiseTitle: 'Our Expertise',
+                
+                pillar1Title: 'AI Automation',
+                pillar1Desc: 'Everyone wants to "jump on AI," but few know how to land it. At HAXOR, we don\'t create complex solutions just because they\'re trendy—we understand the root problem to attack it in a simple, concise way. Less operational burden, more strategic projection.',
+                
+                pillar2Title: 'Cybersecurity',
+                pillar2Desc: 'In a data-driven world, losing information is losing everything. We shield assets, data, and above all, our clients\' reputation. Security isn\'t an accessory—it\'s the pillar of permanence.',
+                
+                pillar3Title: 'Custom Development',
+                pillar3Desc: 'We don\'t build isolated websites; we design digital ecosystems that grow with the business. Precision software that aligns with the client\'s long-term vision.',
+                
+                pillar4Title: 'IT Solutions',
+                pillar4Desc: 'Our passion for hardware lives on. From building high-performance equipment to structured cabling engineering, servers, MDF/IDF, and fiber optics. We design the physical skeleton that supports business intelligence.',
+                
+                whyTitle: 'Why HAXOR',
+                
+                diff1Title: 'Deep Analysis',
+                diff1Desc: 'While others sell a tool, we deliver a result. We take the time to analyze needs and scope before proposing a single line of code.',
+                
+                diff2Title: 'Direct Presence',
+                diff2Desc: 'Every project has the clinical eye of the Principal Architect (CEO) and impeccable management from Project Managers focused on the idea funnel and millimetric organization.',
+                
+                diff3Title: 'Logistical Muscle',
+                diff3Desc: 'Direct alliances with Mexico\'s most important hardware wholesalers and partners specialized in physical infrastructure.',
+                
+                value1: 'Practical Innovation',
+                value1Desc: 'We innovate to solve, not to decorate',
+                
+                value2: 'Precision Engineering',
+                value2Desc: 'Hardware heritage applied to digital processes',
+                
+                value3: 'Deep Understanding',
+                value3Desc: 'Real analysis to propose solutions that impact ROI'
+            },
+            es: {
+                // Hero
+                heroTitle: 'Consultoría Tecnológica<br>Empresarial',
+                heroSubtitle: 'Automatización IA • Ciberseguridad • Desarrollo • Soluciones TI',
+                heroCTA1: 'Explorar Herramientas',
+                heroCTA2: 'Contacto',
+                
+                // Nav
+                navTools: 'Herramientas',
+                navAbout: 'Nosotros',
+                navContact: 'Contacto',
+                
+                // Tools Section
+                toolsTitle: 'Herramientas de Diagnóstico',
+                toolsSubtitle: 'Ingeniería de precisión para tu infraestructura tecnológica',
+                
+                // Express Auditor
+                tool1Title: 'Auditor Express',
+                tool1Desc: 'Diagnóstico estratégico de tu infraestructura técnica. Análisis de precisión de brechas arquitectónicas y oportunidades de optimización.',
+                tool1Badge: 'SESIÓN 45 MIN',
+                
+                // Cyber Shield
+                tool2Title: 'Escáner Cyber-Shield',
+                tool2Desc: 'Análisis de seguridad integral con arquitectura de protección personalizada. Identifica vulnerabilidades antes de que se conviertan en brechas.',
+                tool2Badge: 'AUDITORÍA SEGURIDAD',
+                
+                // ROI Calculator
+                tool3Title: 'Calculadora ROI',
+                tool3Desc: 'Cuantifica el ROI de automatización con métricas de precisión. Calcula ahorros exactos de tiempo y costos por optimización de procesos e implementación de IA.',
+                tool3Badge: 'DOSSIER DE IMPACTO',
+                
+                // Use Cases
+                tool4Title: 'Buscador de Casos de Uso',
+                tool4Desc: 'Descubre oportunidades de IA y automatización adaptadas a tu industria. Incluye hoja de ruta estratégica de implementación.',
+                tool4Badge: 'OPORTUNIDADES IA',
+                
+                // Stats
+                statsSaved: 'Ahorrado para Clientes',
+                statsThreats: 'Amenazas Bloqueadas',
+                statsProcesses: 'Procesos Automatizados',
+                
+                // Partners
+                partnersTitle: 'Partners de Confianza',
+                
+                // Footer
+                footerText: 'Consultoría Tecnológica Empresarial.',
+                
+                // About Section
+                aboutTitle: 'Filosofía y Precisión',
+                aboutLead1: 'HAXOR nació en 2019 en la intersección de la potencia y la precisión—inicialmente en hardware gaming. Esa obsesión por optimizar cada componente físico evolucionó naturalmente hacia la consultoría estratégica.',
+                aboutLead2: '"La tecnología avanza a una velocidad que las empresas no siempre pueden seguir. Mi visión es ser el aliado que aporta certeza. Desde el soporte más básico hasta la automatización más compleja, resolvemos problemas con una mezcla de lógica rigurosa, creatividad disruptiva y una curiosidad inagotable por cómo funcionan las cosas."',
+                aboutSignature: '— Axel Linares, CEO y Arquitecto Principal',
+                aboutPromise: 'No vendemos herramientas. Entregamos resultados, tranquilidad y honestidad profesional.',
+                
+                expertiseTitle: 'Nuestra Experiencia',
+                
+                pillar1Title: 'Automatización IA',
+                pillar1Desc: 'Todo el mundo quiere "subirse a la IA", pero pocos saben aterrizarla. En HAXOR no creamos soluciones complejas solo por tendencia; entendemos el problema raíz para atacarlo de forma simple y concisa. Menos carga operativa, más proyección estratégica.',
+                
+                pillar2Title: 'Ciberseguridad',
+                pillar2Desc: 'En un mundo que se mueve por datos, perder la información es perderlo todo. Blindamos los activos, la data y, sobre todo, la reputación de nuestros clientes. La seguridad no es un accesorio, es el pilar de la permanencia.',
+                
+                pillar3Title: 'Desarrollo Personalizado',
+                pillar3Desc: 'No construimos sitios web aislados; diseñamos ecosistemas digitales que crecen con el negocio. Software de precisión que se alinea con la visión a largo plazo del cliente.',
+                
+                pillar4Title: 'Soluciones TI',
+                pillar4Desc: 'Nuestra pasión por el hardware sigue viva. Desde el armado de equipos de alto rendimiento hasta la ingeniería de cableado estructurado, servidores, MDF/IDF y fibra óptica. Diseñamos el esqueleto físico que soporta la inteligencia del negocio.',
+                
+                whyTitle: 'Por Qué HAXOR',
+                
+                diff1Title: 'Análisis Profundo',
+                diff1Desc: 'Mientras otros venden una herramienta, nosotros entregamos un resultado. Nos tomamos el tiempo de analizar necesidades y alcances antes de proponer una sola línea de código.',
+                
+                diff2Title: 'Presencia Directa',
+                diff2Desc: 'Cada proyecto cuenta con el ojo clínico del Arquitecto Principal (CEO) y la gestión impecable de Project Managers enfocados en el funnel de ideas y la organización milimétrica.',
+                
+                diff3Title: 'Músculo Logístico',
+                diff3Desc: 'Alianzas directas con los mayoristas de hardware más importantes de México y partners especializados en infraestructura física.',
+                
+                value1: 'Innovación Práctica',
+                value1Desc: 'Innovamos para resolver, no para decorar',
+                
+                value2: 'Ingeniería de Precisión',
+                value2Desc: 'Herencia del hardware aplicada a procesos digitales',
+                
+                value3: 'Comprensión Profunda',
+                value3Desc: 'Análisis real para proponer soluciones que impactan el ROI'
+            },
+            de: {
+                // Hero
+                heroTitle: 'Enterprise Technology<br>Consulting',
+                heroSubtitle: 'KI-Automatisierung • Cybersicherheit • Entwicklung • IT-Lösungen',
+                heroCTA1: 'Tools Erkunden',
+                heroCTA2: 'Kontakt',
+                
+                // Nav
+                navTools: 'Tools',
+                navAbout: 'Über uns',
+                navContact: 'Kontakt',
+                
+                // Tools Section
+                toolsTitle: 'Diagnose-Tools',
+                toolsSubtitle: 'Präzisionstechnik für Ihre Technologieinfrastruktur',
+                
+                // Express Auditor
+                tool1Title: 'Express Auditor',
+                tool1Desc: 'Strategische Diagnose Ihrer technischen Infrastruktur. Präzisionsanalyse von Architekturlücken und Optimierungsmöglichkeiten.',
+                tool1Badge: '45-MIN SITZUNG',
+                
+                // Cyber Shield
+                tool2Title: 'Cyber-Shield Scanner',
+                tool2Desc: 'Umfassende Sicherheitsanalyse mit maßgeschneiderter Schutzarchitektur. Identifizieren Sie Schwachstellen, bevor sie zu Verstößen werden.',
+                tool2Badge: 'SICHERHEITSAUDIT',
+                
+                // ROI Calculator
+                tool3Title: 'ROI-Rechner',
+                tool3Desc: 'Quantifizieren Sie den Automatisierungs-ROI mit Präzisionsmetriken. Berechnen Sie exakte Zeit- und Kosteneinsparungen durch Prozessoptimierung und KI-Implementierung.',
+                tool3Badge: 'IMPACT-DOSSIER',
+                
+                // Use Cases
+                tool4Title: 'Use Cases Finder',
+                tool4Desc: 'Entdecken Sie KI- und Automatisierungsmöglichkeiten für Ihre Branche. Inklusive strategischer Implementierungs-Roadmap.',
+                tool4Badge: 'KI-MÖGLICHKEITEN',
+                
+                // Stats
+                statsSaved: 'Für Kunden Gespart',
+                statsThreats: 'Bedrohungen Blockiert',
+                statsProcesses: 'Prozesse Automatisiert',
+                
+                // Partners
+                partnersTitle: 'Vertrauenswürdige Partner',
+                
+                // Footer
+                footerText: 'Enterprise Technology Consulting.',
+                
+                // About Section
+                aboutTitle: 'Philosophie & Präzision',
+                aboutLead1: 'HAXOR wurde 2019 an der Schnittstelle von Leistung und Präzision gegründet—zunächst im Gaming-Hardware-Bereich. Diese Besessenheit, jede physische Komponente zu optimieren, entwickelte sich natürlich zur strategischen Beratung.',
+                aboutLead2: '"Technologie entwickelt sich in einem Tempo, mit dem Unternehmen nicht immer Schritt halten können. Meine Vision ist es, der Partner zu sein, der Gewissheit bringt. Von der einfachsten Unterstützung bis zur komplexesten Automatisierung lösen wir Probleme mit einer Mischung aus rigoroser Logik, disruptiver Kreativität und unstillbarer Neugier darauf, wie Dinge funktionieren."',
+                aboutSignature: '— Axel Linares, CEO & Principal Architect',
+                aboutPromise: 'Wir verkaufen keine Tools. Wir liefern Ergebnisse, Seelenfrieden und professionelle Ehrlichkeit.',
+                
+                expertiseTitle: 'Unsere Expertise',
+                
+                pillar1Title: 'KI-Automatisierung',
+                pillar1Desc: 'Jeder will "auf den KI-Zug aufspringen", aber nur wenige wissen, wie man sie umsetzt. Bei HAXOR erstellen wir keine komplexen Lösungen nur wegen des Trends—wir verstehen das Kernproblem, um es auf einfache, prägnante Weise anzugehen. Weniger operative Last, mehr strategische Projektion.',
+                
+                pillar2Title: 'Cybersicherheit',
+                pillar2Desc: 'In einer datengetriebenen Welt bedeutet Informationsverlust, alles zu verlieren. Wir schützen Assets, Daten und vor allem den Ruf unserer Kunden. Sicherheit ist kein Zubehör—sie ist das Fundament der Beständigkeit.',
+                
+                pillar3Title: 'Custom Development',
+                pillar3Desc: 'Wir bauen keine isolierten Websites; wir entwerfen digitale Ökosysteme, die mit dem Geschäft wachsen. Präzisionssoftware, die sich an der langfristigen Vision des Kunden ausrichtet.',
+                
+                pillar4Title: 'IT-Lösungen',
+                pillar4Desc: 'Unsere Leidenschaft für Hardware lebt weiter. Vom Bau von Hochleistungsgeräten bis hin zur strukturierten Verkabelungstechnik, Servern, MDF/IDF und Glasfaser. Wir entwerfen das physische Skelett, das die Geschäftsintelligenz trägt.',
+                
+                whyTitle: 'Warum HAXOR',
+                
+                diff1Title: 'Tiefgehende Analyse',
+                diff1Desc: 'Während andere ein Tool verkaufen, liefern wir ein Ergebnis. Wir nehmen uns die Zeit, Bedürfnisse und Umfang zu analysieren, bevor wir eine einzige Codezeile vorschlagen.',
+                
+                diff2Title: 'Direkte Präsenz',
+                diff2Desc: 'Jedes Projekt hat das klinische Auge des Principal Architects (CEO) und makelloses Management von Projektmanagern, die sich auf den Ideen-Funnel und millimetergenaue Organisation konzentrieren.',
+                
+                diff3Title: 'Logistische Stärke',
+                diff3Desc: 'Direkte Allianzen mit den wichtigsten Hardware-Großhändlern Mexikos und Partnern, die auf physische Infrastruktur spezialisiert sind.',
+                
+                value1: 'Praktische Innovation',
+                value1Desc: 'Wir innovieren, um zu lösen, nicht um zu dekorieren',
+                
+                value2: 'Präzisionstechnik',
+                value2Desc: 'Hardware-Erbe auf digitale Prozesse angewandt',
+                
+                value3: 'Tiefes Verständnis',
+                value3Desc: 'Echte Analyse, um Lösungen vorzuschlagen, die ROI beeinflussen'
+            }
+        };
+        
+        // Update all text on page
+        function updatePageLanguage() {
+            const t = translations[currentLanguage];
+            
+            // Hero
+            document.querySelector('.hero h1').innerHTML = t.heroTitle;
+            document.querySelector('.hero-subtitle').textContent = t.heroSubtitle;
+            document.querySelectorAll('.hero-cta .btn')[0].textContent = t.heroCTA1;
+            document.querySelectorAll('.hero-cta .btn')[1].textContent = t.heroCTA2;
+            
+            // Nav
+            const navLinks = document.querySelectorAll('nav ul li a');
+            if (navLinks[0]) navLinks[0].textContent = t.navTools;
+            if (navLinks[1]) navLinks[1].textContent = t.navAbout;
+            if (navLinks[2]) navLinks[2].textContent = t.navContact;
+            
+            // Tools Section
+            document.querySelector('.section-title').textContent = t.toolsTitle;
+            document.querySelector('.section-subtitle').textContent = t.toolsSubtitle;
+            
+            // Tool Cards
+            const toolCards = document.querySelectorAll('.tool-card');
+            if (toolCards[0]) {
+                toolCards[0].querySelector('.tool-title').textContent = t.tool1Title;
+                toolCards[0].querySelector('.tool-description').textContent = t.tool1Desc;
+                toolCards[0].querySelector('.tool-badge').textContent = t.tool1Badge;
+            }
+            if (toolCards[1]) {
+                toolCards[1].querySelector('.tool-title').textContent = t.tool2Title;
+                toolCards[1].querySelector('.tool-description').textContent = t.tool2Desc;
+                toolCards[1].querySelector('.tool-badge').textContent = t.tool2Badge;
+            }
+            if (toolCards[2]) {
+                toolCards[2].querySelector('.tool-title').textContent = t.tool3Title;
+                toolCards[2].querySelector('.tool-description').textContent = t.tool3Desc;
+                toolCards[2].querySelector('.tool-badge').textContent = t.tool3Badge;
+            }
+            if (toolCards[3]) {
+                toolCards[3].querySelector('.tool-title').textContent = t.tool4Title;
+                toolCards[3].querySelector('.tool-description').textContent = t.tool4Desc;
+                toolCards[3].querySelector('.tool-badge').textContent = t.tool4Badge;
+            }
+            
+            // Stats
+            const statLabels = document.querySelectorAll('.stat-label');
+            if (statLabels[0]) statLabels[0].textContent = t.statsSaved;
+            if (statLabels[1]) statLabels[1].textContent = t.statsThreats;
+            if (statLabels[2]) statLabels[2].textContent = t.statsProcesses;
+            
+            // Partners
+            const partnerTitle = document.querySelectorAll('.section-title')[1];
+            if (partnerTitle) partnerTitle.textContent = t.partnersTitle;
+            
+            // About Section
+            const aboutSection = document.querySelector('.about-section');
+            if (aboutSection) {
+                const aboutIntroH2 = aboutSection.querySelector('.about-intro h2');
+                const aboutLeads = aboutSection.querySelectorAll('.about-intro .lead');
+                const aboutSignature = aboutSection.querySelector('.signature');
+                const aboutPromise = aboutSection.querySelector('.about-intro p:last-of-type');
+                
+                if (aboutIntroH2) aboutIntroH2.textContent = t.aboutTitle;
+                if (aboutLeads[0]) aboutLeads[0].textContent = t.aboutLead1;
+                if (aboutLeads[1]) aboutLeads[1].textContent = t.aboutLead2;
+                if (aboutSignature) aboutSignature.textContent = t.aboutSignature;
+                if (aboutPromise) aboutPromise.textContent = t.aboutPromise;
+                
+                // Expertise Title
+                const expertiseTitle = aboutSection.querySelectorAll('.section-title')[0];
+                if (expertiseTitle) expertiseTitle.textContent = t.expertiseTitle;
+                
+                // Pillars
+                const pillars = aboutSection.querySelectorAll('.pillar-card');
+                if (pillars[0]) {
+                    pillars[0].querySelector('.pillar-title').textContent = t.pillar1Title;
+                    pillars[0].querySelector('.pillar-desc').textContent = t.pillar1Desc;
+                }
+                if (pillars[1]) {
+                    pillars[1].querySelector('.pillar-title').textContent = t.pillar2Title;
+                    pillars[1].querySelector('.pillar-desc').textContent = t.pillar2Desc;
+                }
+                if (pillars[2]) {
+                    pillars[2].querySelector('.pillar-title').textContent = t.pillar3Title;
+                    pillars[2].querySelector('.pillar-desc').textContent = t.pillar3Desc;
+                }
+                if (pillars[3]) {
+                    pillars[3].querySelector('.pillar-title').textContent = t.pillar4Title;
+                    pillars[3].querySelector('.pillar-desc').textContent = t.pillar4Desc;
+                }
+                
+                // Why HAXOR
+                const whyHaxor = aboutSection.querySelector('.why-haxor');
+                if (whyHaxor) {
+                    whyHaxor.querySelector('h3').textContent = t.whyTitle;
+                    const diffs = whyHaxor.querySelectorAll('.differentiator');
+                    if (diffs[0]) {
+                        diffs[0].querySelector('h4').textContent = t.diff1Title;
+                        diffs[0].querySelector('p').textContent = t.diff1Desc;
+                    }
+                    if (diffs[1]) {
+                        diffs[1].querySelector('h4').textContent = t.diff2Title;
+                        diffs[1].querySelector('p').textContent = t.diff2Desc;
+                    }
+                    if (diffs[2]) {
+                        diffs[2].querySelector('h4').textContent = t.diff3Title;
+                        diffs[2].querySelector('p').textContent = t.diff3Desc;
+                    }
+                }
+                
+                // Values
+                const values = aboutSection.querySelectorAll('.value-item');
+                if (values[0]) {
+                    values[0].querySelector('.value-title').textContent = t.value1;
+                    values[0].querySelector('.value-desc').textContent = t.value1Desc;
+                }
+                if (values[1]) {
+                    values[1].querySelector('.value-title').textContent = t.value2;
+                    values[1].querySelector('.value-desc').textContent = t.value2Desc;
+                }
+                if (values[2]) {
+                    values[2].querySelector('.value-title').textContent = t.value3;
+                    values[2].querySelector('.value-desc').textContent = t.value3Desc;
+                }
+            }
+            
+            // Footer
+            const footerP = document.querySelector('footer p');
+            if (footerP) footerP.innerHTML = `&copy; 2025 HAXOR. ${t.footerText}`;
+        }
+        
         // Set initial active language button on page load
         window.addEventListener('DOMContentLoaded', function() {
             updateLanguageButtons();
             setupLanguageSwitcher();
+            updatePageLanguage();
         });
         
         function updateLanguageButtons() {
@@ -959,6 +1576,7 @@
                     currentLanguage = this.dataset.lang;
                     localStorage.setItem('haxor-language', currentLanguage);
                     updateLanguageButtons();
+                    updatePageLanguage(); // Update text instantly
                 });
             });
         }
