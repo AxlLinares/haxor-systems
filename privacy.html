@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - HAXOR</title>
+    <meta name="description" content="HAXOR Privacy Policy - Data Protection and Security">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --haxor-turquoise: #00D4AA;
+            --haxor-silver: #C0C0C0;
+            --haxor-dark: #0D0D0D;
+            --haxor-green-light: #00FFC8;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--haxor-dark);
+            color: var(--haxor-silver);
+            line-height: 1.8;
+        }
+        
+        .mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(13, 13, 13, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 212, 170, 0.1);
+        }
+        
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-container a {
+            text-decoration: none;
+        }
+        
+        .logo svg {
+            height: 50px;
+            width: auto;
+        }
+        
+        .back-link {
+            color: var(--haxor-turquoise);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+        
+        .back-link:hover {
+            opacity: 0.7;
+        }
+        
+        /* Main Content */
+        .privacy-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 10rem 2rem 4rem;
+        }
+        
+        .privacy-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .privacy-header h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff, var(--haxor-turquoise));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .privacy-header .subtitle {
+            color: var(--haxor-silver);
+            opacity: 0.7;
+            font-size: 1.1rem;
+        }
+        
+        .privacy-header .last-updated {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: var(--haxor-turquoise);
+            margin-top: 1rem;
+        }
+        
+        .privacy-content {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 212, 170, 0.2);
+            border-radius: 24px;
+            padding: 3rem;
+        }
+        
+        .privacy-section {
+            margin-bottom: 3rem;
+        }
+        
+        .privacy-section:last-child {
+            margin-bottom: 0;
+        }
+        
+        .privacy-section h2 {
+            font-size: 1.5rem;
+            color: var(--haxor-turquoise);
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        
+        .privacy-section h3 {
+            font-size: 1.2rem;
+            color: var(--haxor-green-light);
+            margin-bottom: 0.75rem;
+            margin-top: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .privacy-section p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+        
+        .privacy-section ul {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .privacy-section li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .privacy-section strong {
+            color: var(--haxor-turquoise);
+            font-weight: 600;
+        }
+        
+        .contact-box {
+            background: rgba(0, 212, 170, 0.05);
+            border: 1px solid rgba(0, 212, 170, 0.3);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        
+        .contact-box a {
+            color: var(--haxor-turquoise);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .contact-box a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            padding: 3rem 2rem;
+            text-align: center;
+            border-top: 1px solid rgba(0, 212, 170, 0.1);
+            margin-top: 4rem;
+        }
+        
+        footer p {
+            color: var(--haxor-silver);
+            opacity: 0.5;
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: var(--haxor-turquoise);
+            text-decoration: none;
+        }
+        
+        footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .privacy-content {
+                padding: 2rem;
+            }
+            
+            .privacy-container {
+                padding: 8rem 1.5rem 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo-container">
+                <a href="/">
+                    <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M 40 40 L 80 100 L 40 160" 
+                              stroke="url(#gradient1)" 
+                              stroke-width="8" 
+                              fill="none" 
+                              stroke-linecap="round" 
+                              stroke-linejoin="round"/>
+                        <path d="M 160 40 L 120 100 L 160 160" 
+                              stroke="url(#gradient2)" 
+                              stroke-width="8" 
+                              fill="none" 
+                              stroke-linecap="round" 
+                              stroke-linejoin="round"/>
+                        <defs>
+                            <linearGradient id="gradient1" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#00D4AA;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#00FFC8;stop-opacity:1" />
+                            </linearGradient>
+                            <linearGradient id="gradient2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#C0C0C0;stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:#E0E0E0;stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </a>
+            </div>
+            <a href="/" class="back-link">← Back to Home</a>
+        </nav>
+    </header>
+
+    <!-- Privacy Policy Content -->
+    <div class="privacy-container">
+        <div class="privacy-header">
+            <h1>Privacy Policy</h1>
+            <p class="subtitle">Data Protection & Security at HAXOR</p>
+            <p class="last-updated">Last Updated: January 2026</p>
+        </div>
+
+        <div class="privacy-content">
+            <!-- Section 1 -->
+            <div class="privacy-section">
+                <h2>1. Data Controller</h2>
+                <p><strong>HAXOR</strong>, with headquarters in Puebla, Mexico, and web portal <strong>haxor.systems</strong>, is responsible for the use and protection of your personal data.</p>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="privacy-section">
+                <h2>2. Purpose of Data Processing</h2>
+                <p>The personal data we collect from you (Name, Company, Email, and Technical Challenges) will be used for the following purposes necessary for the requested service:</p>
+                <ul>
+                    <li>Perform preliminary technical diagnostics through Artificial Intelligence tools</li>
+                    <li>Manage strategic consulting sessions and appointment scheduling</li>
+                    <li>Prepare personalized commercial proposals and technical dossiers</li>
+                    <li>Send relevant information about cybersecurity and IT infrastructure</li>
+                </ul>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="privacy-section">
+                <h2>3. Security & Discretion</h2>
+                <p>At HAXOR, 'Quiet Luxury' extends to your privacy. We implement industrial-grade encryption protocols to ensure that your company's strategic information is not accessible to third parties.</p>
+                <p><strong>We do not sell or share your database for external advertising purposes.</strong></p>
+            </div>
+
+            <!-- Section 4 -->
+            <div class="privacy-section">
+                <h2>4. ARCO Rights</h2>
+                <p>You have the right to:</p>
+                <ul>
+                    <li><strong>Access:</strong> Know what personal data we have about you</li>
+                    <li><strong>Rectification:</strong> Understand what we use it for</li>
+                    <li><strong>Cancellation:</strong> Request its deletion</li>
+                    <li><strong>Opposition:</strong> Object to the use of your data for specific purposes</li>
+                </ul>
+                
+                <div class="contact-box">
+                    <p><strong>To exercise these rights, send a request to:</strong></p>
+                    <p><a href="mailto:legal@haxor.systems">legal@haxor.systems</a></p>
+                </div>
+            </div>
+
+            <!-- Section 5 -->
+            <div class="privacy-section">
+                <h2>5. Consent</h2>
+                <p>By using our diagnostic tools (<strong>Express Auditor</strong>, <strong>Cyber-Shield Scanner</strong>, <strong>ROI Calculator</strong>, and <strong>Use Cases Finder</strong>), you accept the processing of your data under the terms of this notice.</p>
+            </div>
+
+            <!-- Data We Collect -->
+            <div class="privacy-section">
+                <h2>6. Data We Collect</h2>
+                <h3>Information You Provide:</h3>
+                <ul>
+                    <li>Name and company information</li>
+                    <li>Email address</li>
+                    <li>Company size and industry</li>
+                    <li>Technical challenges and pain points</li>
+                    <li>Current technology infrastructure details</li>
+                </ul>
+                
+                <h3>Automatically Collected Data:</h3>
+                <ul>
+                    <li>Browser type and language preferences</li>
+                    <li>Time zone for regional detection</li>
+                    <li>Usage patterns of diagnostic tools</li>
+                </ul>
+            </div>
+
+            <!-- Data Retention -->
+            <div class="privacy-section">
+                <h2>7. Data Retention</h2>
+                <p>We retain your personal data only for as long as necessary to fulfill the purposes outlined in this policy, unless a longer retention period is required by law.</p>
+                <p>You may request deletion of your data at any time by contacting <a href="mailto:legal@haxor.systems">legal@haxor.systems</a>.</p>
+            </div>
+
+            <!-- International Transfer -->
+            <div class="privacy-section">
+                <h2>8. International Data Transfer</h2>
+                <p>Your data may be processed on servers located outside of Mexico. We ensure that any international data transfer complies with applicable data protection regulations and maintains the same level of protection described in this policy.</p>
+            </div>
+
+            <!-- Changes to Policy -->
+            <div class="privacy-section">
+                <h2>9. Changes to This Policy</h2>
+                <p>We reserve the right to update this Privacy Policy. Any changes will be posted on this page with an updated revision date. We encourage you to review this policy periodically.</p>
+            </div>
+
+            <!-- Contact -->
+            <div class="privacy-section">
+                <h2>10. Contact Us</h2>
+                <p>If you have questions about this Privacy Policy or wish to exercise your data rights, please contact us:</p>
+                <div class="contact-box">
+                    <p><strong>Email:</strong> <a href="mailto:legal@haxor.systems">legal@haxor.systems</a></p>
+                    <p><strong>Website:</strong> <a href="https://haxor.systems">haxor.systems</a></p>
+                    <p><strong>Location:</strong> Puebla, Mexico</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 HAXOR. Enterprise Technology Consulting.</p>
+        <p style="margin-top: 0.5rem;"><a href="/">Return to Home</a></p>
+    </footer>
+</body>
+</html>
