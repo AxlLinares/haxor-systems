@@ -611,6 +611,53 @@
             letter-spacing: 0.1em;
         }
         
+        /* Contact Section with Reclaim iframe */
+        .contact-section {
+            padding: 6rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .contact-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .contact-header h2 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #fff, var(--haxor-turquoise));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .contact-header p {
+            color: var(--haxor-silver);
+            font-size: 1.1rem;
+            opacity: 0.8;
+        }
+        
+        .reclaim-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 212, 170, 0.2);
+            border-radius: 24px;
+            padding: 2rem;
+            overflow: hidden;
+        }
+        
+        .reclaim-iframe {
+            width: 100%;
+            min-height: 700px;
+            border: none;
+            border-radius: 16px;
+            background: transparent;
+        }
+        
         /* Footer */
         footer {
             padding: 4rem 2rem 2rem;
@@ -1145,8 +1192,24 @@
         </div>
     </div>
 
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="contact-header">
+            <h2>Schedule a Consultation</h2>
+            <p>Book your strategic technology session with our Principal Architect</p>
+        </div>
+        <div class="reclaim-container">
+            <iframe 
+                src="https://app.reclaim.ai/m/axel-haxor/high-priority-meeting"
+                class="reclaim-iframe"
+                title="Schedule Meeting with HAXOR"
+                loading="lazy">
+            </iframe>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer id="contact">
+    <footer>
         <p>&copy; 2025 HAXOR. Strategic Technology Architecture.</p>
         <p style="margin-top: 1rem;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d6beb3babab996beb7aeb9a4f8a5afa5a2b3bba5">[email&#160;protected]</a></p>
         <p style="margin-top: 1rem; font-size: 0.85rem;">
@@ -1230,6 +1293,10 @@
                 
                 // Footer
                 footerText: 'Strategic Technology Architecture.',
+                
+                // Contact Section
+                contactTitle: 'Schedule a Consultation',
+                contactSubtitle: 'Book your strategic technology session with our Principal Architect',
                 
                 // About Section
                 aboutTitle: 'Philosophy & Precision',
@@ -1319,6 +1386,10 @@
                 // Footer
                 footerText: 'Arquitectura Tecnológica Estratégica.',
                 
+                // Contact Section
+                contactTitle: 'Agenda una Consultoría',
+                contactSubtitle: 'Reserva tu sesión de tecnología estratégica con nuestro Arquitecto Principal',
+                
                 // About Section
                 aboutTitle: 'Filosofía y Precisión',
                 aboutLead1: 'HAXOR nació en 2019 en la intersección de la potencia y la precisión—inicialmente en hardware gaming. Esa obsesión por optimizar cada componente físico evolucionó naturalmente hacia la consultoría estratégica.',
@@ -1406,6 +1477,10 @@
                 
                 // Footer
                 footerText: 'Strategic Technology Architecture.',
+                
+                // Contact Section
+                contactTitle: 'Beratungstermin vereinbaren',
+                contactSubtitle: 'Buchen Sie Ihre strategische Technologiesitzung mit unserem Principal Architect',
                 
                 // About Section
                 aboutTitle: 'Philosophie & Präzision',
@@ -1578,6 +1653,15 @@
             // Footer
             const footerP = document.querySelector('footer p');
             if (footerP) footerP.innerHTML = `&copy; 2025 HAXOR. ${t.footerText}`;
+            
+            // Contact Section
+            const contactSection = document.querySelector('.contact-section');
+            if (contactSection) {
+                const contactTitle = contactSection.querySelector('.contact-header h2');
+                const contactSubtitle = contactSection.querySelector('.contact-header p');
+                if (contactTitle) contactTitle.textContent = t.contactTitle;
+                if (contactSubtitle) contactSubtitle.textContent = t.contactSubtitle;
+            }
         }
         
         // Set initial active language button on page load
@@ -1608,9 +1692,10 @@
         }
         
         // Configuration
+        // CONFIGURATION - NO API KEYS (All intelligence via webhooks)
         const HAXOR_CONFIG = {
-            // Single unified webhook - Google Apps Script
-            webhook: 'https://script.google.com/macros/s/AKfycbwjAGPcZwXQB73pn_8ntxNcUkKyQE-OtCBVeMb-QgVv2a1boWLgcLjJj6iLjQB_-dadiA/exec',
+            webhook: 'https://script.google.com/macros/s/AKfycbyesVX79QMywnO_P-o-R-oVtLBr6WxFj7LjkyMWlzLM3XwIdMMRdERIFS2c9FrY_V-b5w/exec',
+            reclaimUrl: 'https://app.reclaim.ai/m/axel-haxor/high-priority-meeting',
             pricing: {
                 LATAM: {
                     ecosystem: { display: "$85,000 MXN" },
