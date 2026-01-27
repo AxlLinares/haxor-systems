@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HAXOR - Boutique IT Engineering</title>
-    <meta name="description" content="Enterprise Technology Consulting: AI Automation, Cybersecurity, Custom Development & IT Solutions">
+    <title>HAXOR - Strategic Technology Architecture</title>
+    <meta name="description" content="Strategic Technology Architecture: AI Automation, Cybersecurity, Custom Development & IT Solutions">
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -764,7 +764,7 @@
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Enterprise Technology<br>Consulting</h1>
+            <h1>Strategic Technology<br>Architecture</h1>
             <p class="hero-subtitle">AI Automation • Cybersecurity • Custom Development • IT Solutions</p>
             <div class="hero-cta">
                 <a href="#tools" class="btn btn-primary">Explore Tools</a>
@@ -1147,7 +1147,7 @@
 
     <!-- Footer -->
     <footer id="contact">
-        <p>&copy; 2025 HAXOR. Enterprise Technology Consulting.</p>
+        <p>&copy; 2025 HAXOR. Strategic Technology Architecture.</p>
         <p style="margin-top: 1rem;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d6beb3babab996beb7aeb9a4f8a5afa5a2b3bba5">[email&#160;protected]</a></p>
         <p style="margin-top: 1rem; font-size: 0.85rem;">
             <a href="/privacy.html" style="color: var(--haxor-silver); text-decoration: none; opacity: 0.7; transition: opacity 0.3s;" onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.7'">Privacy Policy</a>
@@ -1186,7 +1186,7 @@
         const translations = {
             en: {
                 // Hero
-                heroTitle: 'Enterprise Technology<br>Consulting',
+                heroTitle: 'Strategic Technology<br>Architecture',
                 heroSubtitle: 'AI Automation • Cybersecurity • Custom Development • IT Solutions',
                 heroCTA1: 'Explore Tools',
                 heroCTA2: 'Get in Touch',
@@ -1229,7 +1229,7 @@
                 partnersTitle: 'Trusted Partners',
                 
                 // Footer
-                footerText: 'Enterprise Technology Consulting.',
+                footerText: 'Strategic Technology Architecture.',
                 
                 // About Section
                 aboutTitle: 'Philosophy & Precision',
@@ -1274,7 +1274,7 @@
             },
             es: {
                 // Hero
-                heroTitle: 'Consultoría Tecnológica<br>Empresarial',
+                heroTitle: 'Arquitectura Tecnológica<br>Estratégica',
                 heroSubtitle: 'Automatización IA • Ciberseguridad • Desarrollo • Soluciones TI',
                 heroCTA1: 'Explorar Herramientas',
                 heroCTA2: 'Contacto',
@@ -1317,7 +1317,7 @@
                 partnersTitle: 'Partners de Confianza',
                 
                 // Footer
-                footerText: 'Consultoría Tecnológica Empresarial.',
+                footerText: 'Arquitectura Tecnológica Estratégica.',
                 
                 // About Section
                 aboutTitle: 'Filosofía y Precisión',
@@ -1362,7 +1362,7 @@
             },
             de: {
                 // Hero
-                heroTitle: 'Enterprise Technology<br>Consulting',
+                heroTitle: 'Strategische Technologie<br>Architektur',
                 heroSubtitle: 'KI-Automatisierung • Cybersicherheit • Entwicklung • IT-Lösungen',
                 heroCTA1: 'Tools Erkunden',
                 heroCTA2: 'Kontakt',
@@ -1405,7 +1405,7 @@
                 partnersTitle: 'Vertrauenswürdige Partner',
                 
                 // Footer
-                footerText: 'Enterprise Technology Consulting.',
+                footerText: 'Strategic Technology Architecture.',
                 
                 // About Section
                 aboutTitle: 'Philosophie & Präzision',
@@ -1609,12 +1609,8 @@
         
         // Configuration
         const HAXOR_CONFIG = {
-            webhooks: {
-                expressAuditor: 'https://script.google.com/macros/s/AKfycbzn4EBbeD-5y8ZXTIorlVSqLKiZvTb7TuFuERH8I5U_UhyIxlQeB1vBqydadrdyyK1gzg/exec',
-                cyberShield: 'https://hook.us2.make.com/ehg4hh2qybdia9svar1joaa385dfo3uf',
-                roiCalculator: 'https://hook.us2.make.com/qsl92xk29khtqu57fvtwlssj8g2xggvj',
-                useCases: 'https://hook.us2.make.com/9sma79lf0oepsq84ogyq9d4em9ner1gn'
-            },
+            // Single unified webhook - Google Apps Script
+            webhook: 'https://script.google.com/macros/s/AKfycbwjAGPcZwXQB73pn_8ntxNcUkKyQE-OtCBVeMb-QgVv2a1boWLgcLjJj6iLjQB_-dadiA/exec',
             pricing: {
                 LATAM: {
                     ecosystem: { display: "$85,000 MXN" },
@@ -1656,6 +1652,7 @@
             e.preventDefault();
             const formData = new FormData(e.target);
             const data = {
+                type: 'auditor',
                 region: detectRegion(),
                 name: formData.get('name'),
                 email: formData.get('email'),
@@ -1667,14 +1664,19 @@
             };
 
             try {
-                await fetch(HAXOR_CONFIG.webhooks.expressAuditor, {
+                await fetch(HAXOR_CONFIG.webhook, {
                     method: 'POST',
+                    mode: 'no-cors',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
                 });
+                // With no-cors, we assume success if no network error
                 document.getElementById('expressSuccess').classList.add('active');
                 e.target.reset();
-                setTimeout(() => closeModal('expressAuditor'), 3000);
+                setTimeout(() => {
+                    document.getElementById('expressSuccess').classList.remove('active');
+                    closeModal('expressAuditor');
+                }, 3000);
             } catch (error) {
                 alert('Error submitting request. Please try again.');
             }
@@ -1684,6 +1686,7 @@
             e.preventDefault();
             const formData = new FormData(e.target);
             const data = {
+                type: 'cyberShield',
                 region: detectRegion(),
                 name: formData.get('name'),
                 email: formData.get('email'),
@@ -1698,14 +1701,18 @@
             };
 
             try {
-                await fetch(HAXOR_CONFIG.webhooks.cyberShield, {
+                await fetch(HAXOR_CONFIG.webhook, {
                     method: 'POST',
+                    mode: 'no-cors',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
                 });
                 document.getElementById('cyberSuccess').classList.add('active');
                 e.target.reset();
-                setTimeout(() => closeModal('cyberShield'), 3000);
+                setTimeout(() => {
+                    document.getElementById('cyberSuccess').classList.remove('active');
+                    closeModal('cyberShield');
+                }, 3000);
             } catch (error) {
                 alert('Error submitting request. Please try again.');
             }
@@ -1731,10 +1738,12 @@
             document.getElementById('roiResult').classList.add('active');
             
             const data = {
+                type: 'roi',
                 region: detectRegion(),
                 name: formData.get('name'),
                 email: formData.get('email'),
                 company: formData.get('company'),
+                currency: currency,
                 employees: '51-200',
                 industry: 'Technology',
                 current_manual_hours: formData.get('current_manual_hours'),
@@ -1745,8 +1754,9 @@
             };
 
             try {
-                await fetch(HAXOR_CONFIG.webhooks.roiCalculator, {
+                await fetch(HAXOR_CONFIG.webhook, {
                     method: 'POST',
+                    mode: 'no-cors',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
                 });
@@ -1760,6 +1770,7 @@
             e.preventDefault();
             const formData = new FormData(e.target);
             const data = {
+                type: 'useCases',
                 region: detectRegion(),
                 name: formData.get('name'),
                 email: formData.get('email'),
@@ -1771,14 +1782,18 @@
             };
 
             try {
-                await fetch(HAXOR_CONFIG.webhooks.useCases, {
+                await fetch(HAXOR_CONFIG.webhook, {
                     method: 'POST',
+                    mode: 'no-cors',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(data)
                 });
                 document.getElementById('useCasesSuccess').classList.add('active');
                 e.target.reset();
-                setTimeout(() => closeModal('useCases'), 3000);
+                setTimeout(() => {
+                    document.getElementById('useCasesSuccess').classList.remove('active');
+                    closeModal('useCases');
+                }, 3000);
             } catch (error) {
                 alert('Error submitting request. Please try again.');
             }
