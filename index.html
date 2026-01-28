@@ -611,7 +611,7 @@
             letter-spacing: 0.1em;
         }
         
-        /* Contact Section with Reclaim iframe */
+        /* Contact Section with Google Calendar */
         .contact-section {
             padding: 6rem 2rem;
             max-width: 1200px;
@@ -639,23 +639,22 @@
             opacity: 0.8;
         }
         
-        .reclaim-container {
+        .calendar-container {
             max-width: 900px;
             margin: 0 auto;
             background: rgba(255, 255, 255, 0.02);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(0, 212, 170, 0.2);
             border-radius: 24px;
-            padding: 2rem;
+            padding: 1rem;
             overflow: hidden;
         }
         
-        .reclaim-iframe {
+        .calendar-iframe {
             width: 100%;
             min-height: 700px;
             border: none;
             border-radius: 16px;
-            background: transparent;
         }
         
         /* Footer */
@@ -1195,15 +1194,15 @@
     <!-- Contact Section -->
     <section id="contact" class="contact-section">
         <div class="contact-header">
-            <h2>Schedule a Consultation</h2>
-            <p>Book your strategic technology session with our Principal Architect</p>
+            <h2>Schedule a Strategic Session</h2>
+            <p>Book your technology consultation with our Principal Architect</p>
         </div>
-        <div class="reclaim-container">
+        <div class="calendar-container">
             <iframe 
-                src="https://app.reclaim.ai/m/axel-haxor/high-priority-meeting"
-                class="reclaim-iframe"
+                src="https://calendar.app.google/oprB2bWfAjk2bhg38"
+                class="calendar-iframe"
                 title="Schedule Meeting with HAXOR"
-                loading="lazy">
+                frameborder="0">
             </iframe>
         </div>
     </section>
@@ -1295,8 +1294,8 @@
                 footerText: 'Strategic Technology Architecture.',
                 
                 // Contact Section
-                contactTitle: 'Schedule a Consultation',
-                contactSubtitle: 'Book your strategic technology session with our Principal Architect',
+                contactTitle: 'Schedule a Strategic Session',
+                contactSubtitle: 'Book your technology consultation with our Principal Architect',
                 
                 // About Section
                 aboutTitle: 'Philosophy & Precision',
@@ -1387,8 +1386,8 @@
                 footerText: 'Arquitectura Tecnológica Estratégica.',
                 
                 // Contact Section
-                contactTitle: 'Agenda una Consultoría',
-                contactSubtitle: 'Reserva tu sesión de tecnología estratégica con nuestro Arquitecto Principal',
+                contactTitle: 'Agenda una Sesión Estratégica',
+                contactSubtitle: 'Reserva tu consultoría tecnológica con nuestro Arquitecto Principal',
                 
                 // About Section
                 aboutTitle: 'Filosofía y Precisión',
@@ -1479,8 +1478,8 @@
                 footerText: 'Strategic Technology Architecture.',
                 
                 // Contact Section
-                contactTitle: 'Beratungstermin vereinbaren',
-                contactSubtitle: 'Buchen Sie Ihre strategische Technologiesitzung mit unserem Principal Architect',
+                contactTitle: 'Strategische Sitzung Vereinbaren',
+                contactSubtitle: 'Buchen Sie Ihre Technologieberatung mit unserem Principal Architect',
                 
                 // About Section
                 aboutTitle: 'Philosophie & Präzision',
@@ -1695,7 +1694,7 @@
         // CONFIGURATION - NO API KEYS (All intelligence via webhooks)
         const HAXOR_CONFIG = {
             webhook: 'https://script.google.com/macros/s/AKfycbyesVX79QMywnO_P-o-R-oVtLBr6WxFj7LjkyMWlzLM3XwIdMMRdERIFS2c9FrY_V-b5w/exec',
-            reclaimUrl: 'https://app.reclaim.ai/m/axel-haxor/high-priority-meeting',
+            calendarUrl: 'https://calendar.app.google/oprB2bWfAjk2bhg38',
             pricing: {
                 LATAM: {
                     ecosystem: { display: "$85,000 MXN" },
