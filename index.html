@@ -1719,31 +1719,30 @@
             }
         };
 
-        // Detect Region based on selected language
+        // Detect Region based on selected language for pricing
         function detectRegion() {
-            // Map language to region
             const langToRegion = {
                 'en': 'USA',
                 'es': 'LATAM',
                 'de': 'DACH'
             };
-            
             return langToRegion[currentLanguage] || 'USA';
         }
 
+        // Form Submissions
         // Form Submissions
         document.getElementById('expressAuditorForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             const formData = new FormData(e.target);
             const data = {
                 type: 'auditor',
-                region: detectRegion(),
                 name: formData.get('name'),
-                email: formData.get('email'),
                 company: formData.get('company'),
+                email: formData.get('email'),
                 employees: formData.get('employees'),
                 industry: formData.get('industry'),
                 concerns: formData.get('concerns'),
+                region: detectRegion(),
                 pricing: HAXOR_CONFIG.pricing
             };
 
@@ -1769,18 +1768,19 @@
         document.getElementById('cyberShieldForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             const formData = new FormData(e.target);
+            
+            // Consolidate security-specific fields into concerns
+            const concernsText = `Current Security: ${formData.get('current_security') || 'N/A'}\nCompliance Needs: ${formData.get('compliance_needs') || 'N/A'}\nSecurity Incidents: ${formData.get('security_incidents') || 'N/A'}\nAdditional Concerns: ${formData.get('concerns') || 'N/A'}`;
+            
             const data = {
                 type: 'cyberShield',
-                region: detectRegion(),
                 name: formData.get('name'),
-                email: formData.get('email'),
                 company: formData.get('company'),
+                email: formData.get('email'),
                 employees: formData.get('employees'),
                 industry: formData.get('industry'),
-                current_security: formData.get('current_security'),
-                compliance_needs: formData.get('compliance_needs'),
-                security_incidents: formData.get('security_incidents'),
-                concerns: formData.get('concerns'),
+                concerns: concernsText,
+                region: detectRegion(),
                 pricing: HAXOR_CONFIG.pricing
             };
 
@@ -1821,19 +1821,18 @@
             document.getElementById('roiHours').textContent = `${Math.round(hoursRecovered)} hours recovered annually`;
             document.getElementById('roiResult').classList.add('active');
             
+            // Consolidate ROI data into concerns field
+            const concernsText = `ROI Analysis:\nCurrency: ${currency}\nManual Hours/Month: ${manualHours}\nHourly Cost: ${currencySymbol}${hourlyCost}\nError Rate: ${formData.get('error_rate') || '0'}%\nCurrent Tools Cost: ${currencySymbol}${formData.get('current_tools_cost') || '0'}\nAnnual Savings: ${currencySymbol}${annualSavings.toLocaleString()}\nHours Recovered: ${Math.round(hoursRecovered)}`;
+            
             const data = {
                 type: 'roi',
-                region: detectRegion(),
                 name: formData.get('name'),
-                email: formData.get('email'),
                 company: formData.get('company'),
-                currency: currency,
+                email: formData.get('email'),
                 employees: '51-200',
                 industry: 'Technology',
-                current_manual_hours: formData.get('current_manual_hours'),
-                hourly_cost: formData.get('hourly_cost'),
-                error_rate: formData.get('error_rate'),
-                current_tools_cost: formData.get('current_tools_cost'),
+                concerns: concernsText,
+                region: detectRegion(),
                 pricing: HAXOR_CONFIG.pricing
             };
 
@@ -1855,13 +1854,13 @@
             const formData = new FormData(e.target);
             const data = {
                 type: 'useCases',
-                region: detectRegion(),
                 name: formData.get('name'),
-                email: formData.get('email'),
                 company: formData.get('company'),
+                email: formData.get('email'),
                 employees: formData.get('employees'),
                 industry: formData.get('industry'),
                 concerns: formData.get('concerns'),
+                region: detectRegion(),
                 pricing: HAXOR_CONFIG.pricing
             };
 
